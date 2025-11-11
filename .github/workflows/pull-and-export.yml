@@ -7,13 +7,13 @@ jobs:
   pull:
     runs-on: ubuntu-latest
     steps:
-      - name: Pull image
-        run: |
-          docker pull io.chancloud.com/c2nd-enterprise/audio2face-3d:1
-          docker save io.chancloud.com/c2nd-enterprise/audio2face-3d:1 -o audio2face-3d.tar
-          ls -lh audio2face-3d.tar
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: audio2face-3d-tar
-          path: audio2face-3d.tar
+    - name: Pull image
+      run: |
+        docker pull io.chancloud.com/c2nd-enterprise/audio2face-3d:1
+        docker save io.chancloud.com/c2nd-enterprise/audio2face-3d:1 -o audio2face-3d.tar
+        ls -lh audio2face-3d.tar
+        
+    - uses: actions/upload-artifact@v4
+      with:
+        name: audio2face-3d-tar
+        path: audio2face-3d.tar
